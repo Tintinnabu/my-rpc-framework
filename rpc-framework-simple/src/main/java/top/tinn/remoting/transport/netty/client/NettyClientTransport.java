@@ -30,6 +30,7 @@ public class NettyClientTransport implements ClientTransport {
 
     @Override
     public CompletableFuture<RpcResponse<Object>> sendRpcRequest(RpcRequest rpcRequest) {
+        //作为异步返回结果
         CompletableFuture<RpcResponse<Object>> resultFuture = new CompletableFuture<>();
         String rpcServiceName = rpcRequest.toRpcProperties().toRpcServiceName();
         InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcServiceName);

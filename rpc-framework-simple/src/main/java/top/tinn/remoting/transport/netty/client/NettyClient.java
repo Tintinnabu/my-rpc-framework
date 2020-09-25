@@ -67,6 +67,7 @@ public class NettyClient {
                 throw new IllegalStateException();
             }
         });
+        //阻塞等待channel建立
         return completableFuture.get();
     }
 

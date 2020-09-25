@@ -42,6 +42,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
             log.info("server receive msg: [{}] ", msg);
             RpcRequest rpcRequest = (RpcRequest) msg;
             if (rpcRequest.getRpcMessageType() == RpcMessageType.HEART_BEAT){
+                //PING-PONG
                 log.info("receive heat beat msg from client");
                 return;
             }
